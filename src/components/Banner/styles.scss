@@ -1,0 +1,65 @@
+@use '@/styles/variables' as *;
+
+.banner {
+  position: relative;
+  width: 100%;
+  // height: 390px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 81px;
+    background: linear-gradient(to right,
+        rgba($color-black, 0.8),
+        rgba($color-black, 0));
+    color: $color-white;
+
+    h1 {
+      font-size: $font-hero;
+      font-weight: 600;
+      max-width: 822px;
+      line-height: calc(50 / 48);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 32px;
+      margin-bottom: 32px;
+
+      span {
+        color: $color-secondary;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: $color-secondary;
+    color: $color-black;
+    border: none;
+    width: 206px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+  }
+}

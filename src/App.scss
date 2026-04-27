@@ -1,0 +1,8 @@
+@use '../src/styles/variables' as *;
+@use 'sass:color';
+
+.main {
+  min-height: calc(100vh - 70px);
+}
+
+

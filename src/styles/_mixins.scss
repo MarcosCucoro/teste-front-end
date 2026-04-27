@@ -1,0 +1,27 @@
+@mixin card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  padding: $space-md;
+}
+
+@mixin button-primary {
+  background: $color-primary;
+  color: $text-white;
+  border-radius: $radius-sm;
+  padding: $space-sm $space-md;
+  font-weight: $font-semibold;
+  transition: $transition-default;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+@mixin button-secondary {
+  background: $color-secondary;
+  color: $text-primary;
+  border-radius: $radius-sm;
+  padding: $space-sm $space-md;
+  font-weight: $font-semibold;
+}

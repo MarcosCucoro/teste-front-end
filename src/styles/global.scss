@@ -1,0 +1,9 @@
+@use 'variables' as *;
+@use 'reset';
+
+body {
+  font-family: $font-family-base;
+  background-color: $color-white;
+  color: $color-black;
+  line-height: 1.5;
+}

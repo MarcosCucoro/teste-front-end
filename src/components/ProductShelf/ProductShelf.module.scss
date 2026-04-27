@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+.shelf {
+  padding: 2rem 0 3rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-black;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.status {
+  text-align: center;
+  color: $color-gray;
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+.statusError {
+  text-align: center;
+  color: $color-primary;
+  font-size: 1rem;
+  padding: 2rem 0;
+}

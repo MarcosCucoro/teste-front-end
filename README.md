@@ -1,31 +1,78 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Econverse - Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+## Tecnologias
 
-Segue abaixo as instruções para a execução do teste.
+- React 18
+- TypeScript
+- Vite
+- Sass (CSS Modules)
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail julia.gardiano@econverse.com.br com o título **Teste Vaga FrontEnd**
+## Como rodar o projeto
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+### Pré-requisitos
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- Node.js >= 18
+- npm ou yarn
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+### Instalação
 
-**Boa sorte! ;)**
+```bash
+npm install
+```
+
+### Desenvolvimento
+
+```bash
+npm run dev
+```
+
+Acesse [http://localhost:5173](http://localhost:5173) no navegador.
+
+### Build para produção
+
+```bash
+npm run build
+```
+
+### Preview do build
+
+```bash
+npm run preview
+```
+
+## Estrutura do projeto
+
+```
+├── index.html
+├── package.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── src/
+    ├── assets/
+    ├── components/
+    │   ├── Header/          # Cabeçalho da aplicação
+    │   ├── ProductCard/     # Card individual de produto
+    │   ├── ProductModal/    # Modal de detalhes do produto
+    │   └── ProductShelf/    # Vitrine com grid de produtos
+    ├── hooks/
+    │   └── useProducts.ts   # Hook para consumo da API
+    ├── styles/
+    │   ├── _reset.scss
+    │   ├── _variables.scss
+    │   └── global.scss
+    ├── types/
+    │   └── product.ts       # Tipagens TypeScript
+    ├── App.tsx
+    ├── App.module.scss
+    ├── main.tsx
+    └── vite-env.d.ts
+```
+
+## Funcionalidades
+
+- Vitrine de produtos consumindo API REST da Econverse
+- Modal de detalhes ao clicar em um produto
+- Layout responsivo (desktop, tablet e mobile)
+- SEO semântico com HTML5 (`<header>`, `<main>`, `<section>`, `<article>`)
+- Acessibilidade: `role="dialog"`, `aria-modal`, `aria-label`, tecla Escape para fechar modal

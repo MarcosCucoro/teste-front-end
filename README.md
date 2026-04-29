@@ -14,7 +14,7 @@ Projeto de e-commerce desenvolvido com **React**, **TypeScript**, **Vite** e **S
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/MarcosCucoro/teste-front-end.git
 cd teste-front-end
 npm install
 ```

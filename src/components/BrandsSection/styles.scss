@@ -44,3 +44,29 @@
     }
   }
 }
+
+// ── Responsivo ──────────────────────────────────────────────────────────────
+@include desktop-md {
+  .brands-section { margin-top: 60px; }
+  .brands-container { gap: 1.75rem; }
+  .brands-container__brands { width: 160px; height: 160px; }
+}
+
+@include tablet {
+  .brands-section { margin-top: 48px; }
+  .brands-container {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding: 0 1rem;
+  }
+  .brands-container__brands { width: 130px; height: 130px; }
+}
+
+@include mobile {
+  .brands-section { margin-top: 32px; }
+  .brands-container {
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+  .brands-container__brands { width: 100px; height: 100px; padding: $space-sm; }
+}

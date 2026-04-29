@@ -43,3 +43,35 @@
     display: flex;
   }
 }
+
+@include tablet {
+  .search {
+    width: 100%;
+    padding: $space-xs $space-sm;
+
+    &__input {
+      font-size: $font-sm;
+    }
+
+    &__icon {
+      font-size: $font-sm;
+    }
+  }
+
+}
+
+@include mobile {
+  .search {
+    width: 100%;
+    padding: $space-xs $space-sm;
+
+    &__input {
+      font-size: $font-xs;
+    }
+
+    &__icon {
+      font-size: $font-sm;
+    }
+  }
+
+}

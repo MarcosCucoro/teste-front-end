@@ -1,13 +1,14 @@
 import './styles.scss';
 
 import logo from '@/assets/images/logo.png';
-import { CircleUserRound, CreditCard, Crown, Heart, Package2, ShieldCheck, ShoppingCart, Truck } from 'lucide-react';
+import { CircleUserRound, CreditCard, Crown, Heart, Menu, Package2, ShieldCheck, ShoppingCart, Truck, X } from 'lucide-react';
 import { useState } from 'react';
 
 import SearchInput from '../SearchInput';
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const allCategories = [
     {
@@ -52,7 +53,14 @@ const Header = () => {
       </div>
       <hr />
       <div className='header__content'>
-        <div>
+        <button
+          className='header__menu-btn'
+          onClick={() => setIsMenuOpen(true)}
+          aria-label="Abrir menu"
+        >
+          <Menu size={28} />
+        </button>
+        <div className='header__logo'>
           <img src={logo} alt="Logo" />
         </div>
         <SearchInput />
@@ -78,6 +86,38 @@ const Header = () => {
           ))}
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className='mobile-menu' onClick={() => setIsMenuOpen(false)} role="presentation">
+          <div
+            className='mobile-menu__drawer'
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navegação"
+          >
+            <button
+              className='mobile-menu__close'
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Fechar menu"
+            >
+              <X size={24} />
+            </button>
+            <nav className='mobile-menu__nav'>
+              {allCategories.map((category) => (
+                <a
+                  href='#'
+                  key={category.name}
+                  className={`mobile-menu__item ${active === category.name ? 'mobile-menu__item--active' : ''}`}
+                  onClick={() => { setActive(category.name); setIsMenuOpen(false); }}
+                >
+                  {category.icon}{category.name}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

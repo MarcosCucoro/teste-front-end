@@ -9,6 +9,31 @@
     border: none;
     border-top: 1px solid $border-light;
   }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $space-sm $space-xs;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .header__icon {
+      color: $text-muted;
+      transition: $transition-default;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03);
+        color: $color-blue;
+      }
+    }
+  }
+
 }
 
 .topbar {
@@ -33,30 +58,6 @@
 
   span {
     color: $color-blue;
-  }
-}
-
-.header__content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: $space-sm $space-xs;
-
-  .header__icons {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
-    .header__icon {
-      color: $text-muted;
-      transition: $transition-default;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.03);
-        color: $color-blue;
-      }
-    }
   }
 }
 
@@ -91,3 +92,179 @@
   }
 }
 
+// ── Responsivo ──────────────────────────────────────────────────────────────
+.header__menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $text-muted;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+
+  &__drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: $color-white;
+    padding: $space-xl $space-md;
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    box-shadow: $shadow-xl;
+  }
+
+  &__close {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $text-muted;
+    display: flex;
+    padding: 0;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: $font-sm;
+    font-weight: $font-semibold;
+    color: $text-muted;
+    text-transform: uppercase;
+    padding: $space-sm 0;
+    border-bottom: 1px solid $border-light;
+    cursor: pointer;
+    transition: $transition-default;
+    text-decoration: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover,
+    &--active {
+      color: $color-blue;
+    }
+  }
+}
+
+@include desktop-md {
+  .header {
+    margin: 0 2rem;
+  }
+
+  .topbar {
+    height: auto;
+    padding: 4px 0;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar .nav {
+    padding: $space-sm $space-md;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}
+
+@include tablet {
+  .header {
+    margin: 0 1rem;
+
+    &__content {
+      gap: $space-sm;
+      justify-content: space-between;
+      padding: $space-sm;
+    }
+
+    &__icons {
+      gap: 1rem;
+
+      .header__icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .navbar {
+    .nav {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: $space-xs $space-sm;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav__item {
+        gap: 0.25rem;
+      }
+    }
+  }
+
+}
+
+@include mobile {
+  .header {
+    margin: 0 0.5rem;
+
+    &__menu-btn {
+      display: flex;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: $space-xs;
+      padding: $space-xs $space-sm;
+    }
+
+    &__icons {
+      gap: 0.5rem;
+
+      .header__icon {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .navbar {
+    display: none;
+  }
+
+}

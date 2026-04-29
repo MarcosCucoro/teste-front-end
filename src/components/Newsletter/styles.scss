@@ -61,3 +61,37 @@
     color: $color-white;
   }
 }
+
+// ── Responsivo ──────────────────────────────────────────────────────────────
+@include desktop-md {
+  .newsletter__section {
+    gap: 3rem;
+  }
+}
+
+@include tablet {
+  .newsletter__section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $space-xl;
+    padding: $space-xl $space-md;
+  }
+
+  .newsletter__title { font-size: $font-xl; }
+}
+
+@include mobile {
+  .newsletter__section {
+    padding: $space-xl $space-sm;
+  }
+
+  .newsletter__fields {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter__input {
+    width: 100%;
+  }
+}

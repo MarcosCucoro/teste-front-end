@@ -10,7 +10,7 @@ const Footer = () => {
       <Newsletter />
       <Informations />
       <div className="footer__copy">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
       </div>
     </footer>
   );

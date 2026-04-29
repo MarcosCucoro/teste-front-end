@@ -67,3 +67,19 @@
     margin-bottom: $space-xs;
   }
 }
+
+// ── Responsivo ──────────────────────────────────────────────────────────────
+@include tablet {
+  .product-card {
+    min-width: 260px;
+    height: 460px;
+  }
+}
+
+@include mobile {
+  .product-card {
+    min-width: 240px;
+    height: 430px;
+    padding: $space-sm;
+  }
+}

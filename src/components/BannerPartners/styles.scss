@@ -51,3 +51,43 @@
     margin-bottom: $space-xl;
   }
 }
+
+// ── Responsivo ──────────────────────────────────────────────────────────────
+@include desktop-md {
+  .banner-partners {
+    gap: 0.5rem;
+    margin-top: 60px;
+  }
+}
+
+@include tablet {
+  .banner-partners {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .banner-partners__title { font-size: $font-xxl; }
+}
+
+@include mobile {
+  .banner-partners {
+    margin-top: 32px;
+    padding: 0 0.75rem;
+  }
+
+  .banner-partners__overlay {
+    height: 180px;
+    padding: 0 $space-xl;
+  }
+
+  .banner-partners__title { 
+    font-size: $font-xl; 
+  }
+  .banner-partners__description { 
+    font-size: $font-sm; 
+    margin-bottom: $space-md; 
+  }
+}

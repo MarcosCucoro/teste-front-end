@@ -1,73 +1,91 @@
-# React + TypeScript + Vite
+# Teste Front-end — Econverse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de e-commerce desenvolvido com **React**, **TypeScript**, **Vite** e **SCSS**.
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org/) v18 ou superior
+- npm v9 ou superior (já incluso no Node.js)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Instalação
 
-## Expanding the ESLint configuration
+Clone o repositório e instale as dependências:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone <url-do-repositorio>
+cd teste-front-end
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Rodando em desenvolvimento
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Inicia o servidor local:
+
+```bash
+npm run dev
 ```
+
+Acesse em: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## Build para produção
+
+Compila o TypeScript e gera os arquivos otimizados na pasta `dist/`:
+
+```bash
+npm run build
+```
+
+---
+
+## Pré-visualização do build
+
+Serve o conteúdo da pasta `dist/` localmente para validar o build antes de publicar:
+
+```bash
+npm run preview
+```
+
+Acesse em: [http://localhost:4173](http://localhost:4173)
+
+---
+
+## Lint
+
+Verifica o código com ESLint:
+
+```bash
+npm run lint
+```
+
+---
+
+## Estrutura do projeto
+
+```
+src/
+├── assets/          # Imagens e recursos estáticos
+├── components/      # Componentes reutilizáveis
+├── environments/    # Variáveis de ambiente
+├── pages/           # Páginas da aplicação
+├── services/        # Chamadas à API
+├── styles/          # Variáveis, mixins e estilos globais SCSS
+└── types/           # Tipos TypeScript
+```
+
+---
+
+## Tecnologias
+
+| Tecnologia | Versão |
+|---|---|
+| React | 19 |
+| TypeScript | 6 |
+| Vite | 8 |
+| SCSS (Sass) | 1.99 |
+| Lucide React | 1.11 |

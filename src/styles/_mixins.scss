@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 @mixin card {
   background: $bg-card;
   border-radius: $radius-md;
@@ -6,22 +8,20 @@
 }
 
 @mixin button-primary {
-  background: $color-primary;
-  color: $text-white;
+  background: $color-blue;
+  color: $color-white;
   border-radius: $radius-sm;
-  padding: $space-sm $space-md;
   font-weight: $font-semibold;
   transition: $transition-default;
 
   &:hover {
-    background: $color-primary-dark;
+    background: $color-blue;
   }
 }
 
 @mixin button-secondary {
-  background: $color-secondary;
-  color: $text-primary;
+  background: $color-yellow;
+  color: $color-gray-dark;
   border-radius: $radius-sm;
-  padding: $space-sm $space-md;
   font-weight: $font-semibold;
 }

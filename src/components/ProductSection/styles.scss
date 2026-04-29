@@ -1,0 +1,118 @@
+.product-section {
+  margin-top: 90px;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: $font-xxl;
+    font-weight: $font-bold;
+    color: $color-blue;
+    margin: 1rem 0;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      max-width: 360px;
+      height: 1px;
+      background-color: $border-light;
+    }
+
+    span {
+      padding: 0 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: center;
+    border: 1px solid $border-md;
+    overflow: hidden;
+    width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__category {
+    flex: 1;
+    padding: $space-sm $space-md;
+    font-size: $font-sm;
+    background: $color-white;
+    border: none;
+    border-right: 1px solid $border-md;
+    cursor: pointer;
+    color: $color-gray-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, color 0.2s;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background: rgba($color-blue, 0.10);
+      color: $color-blue;
+    }
+
+    &--active {
+      background: $color-white;
+      color: $color-blue;
+      font-weight: $font-bold;
+    }
+  }
+
+  &__view-all-wrapper {
+    text-align: center;
+  }
+
+  &__view-all {
+    color: $color-gray-dark;
+    font-size: $font-md;
+    font-weight: $font-bold;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-md;
+    padding: $space-md 0;
+  }
+
+  &__track {
+    display: flex;
+    gap: $space-lg;
+    padding: 1rem;
+    overflow-x: hidden;
+    width: calc(4 * 304px + 3 * #{$space-xl});
+    flex-shrink: 0;
+    scroll-behavior: smooth;
+  }
+
+  &__arrow {
+    padding: 5px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #3F3F40;
+    transition: $transition-default;
+
+    &:hover {
+      background: $color-blue;
+      color: $color-white;
+      border-color: $color-blue;
+    }
+  }
+}

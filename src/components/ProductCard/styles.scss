@@ -1,0 +1,69 @@
+.product-card {
+  background: $color-white;
+  border-radius: $radius-md;
+  padding: $space-md;
+  min-width: 304px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-xs;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: $shadow-lg;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    margin-bottom: $space-xs;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__description {
+    font-size: $font-sm;
+    color: $color-gray-dark;
+    line-height: 1.5;
+  }
+
+  &__original-price {
+    font-size: $font-sm;
+    color: $color-gray-md;
+    text-decoration: line-through;
+    margin-top: $space-xs;
+  }
+
+  &__price {
+    font-size: $font-xl;
+    font-weight: $font-bold;
+    color: $color-black;
+  }
+
+  &__installments {
+    font-size: $font-xs;
+    color: $color-gray-dark;
+  }
+
+  &__shipping {
+    font-size: $font-sm;
+    color: $color-blue;
+    margin-bottom: $space-xs;
+  }
+}

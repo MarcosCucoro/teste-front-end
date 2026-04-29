@@ -1,11 +1,9 @@
-@import '../../styles/variables';
-
 .search {
   display: flex;
   align-items: center;
   gap: $space-sm;
 
-  background: $gray-300;
+  background: $bg-search;
   border-radius: $radius-md;
 
   padding: $space-sm $space-md;
@@ -14,13 +12,16 @@
   transition: $transition-default;
 
   &:focus-within {
-    border-color: $color-primary;
     box-shadow: 0 0 0 2px rgba(47, 47, 162, 0.1);
   }
 
   &__icon {
     color: $text-muted;
     flex-shrink: 0;
+
+    &:hover {
+      color: $color-gray-dark;
+    }
   }
 
   &__input {
@@ -30,11 +31,15 @@
 
     font-size: $font-sm;
     font-weight: $font-medium;
-    color: $text-primary;
+    color: $color-gray-dark;
     background: transparent;
 
     &::placeholder {
       color: $text-muted;
     }
+  }
+
+  &__button {
+    display: flex;
   }
 }

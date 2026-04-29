@@ -1,0 +1,70 @@
+.informations {
+  width: 100%;
+  background-color: $bg-card;
+  display: flex;
+  justify-content: center;
+  padding: 62px 80px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 198px;
+      align-self: stretch;
+      background-color: $border-md;
+      margin: 0 90px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__description {
+    font-size: $font-xs;
+    font-weight: $font-regular;
+    color: $color-gray-dark;
+
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    color: $color-gray-dark;
+
+      a:hover {
+        color: $color-blue;
+      
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 6.25rem;
+
+    h3 {
+      font-size: $font-sm;
+      font-weight: $font-bold;
+      color: $color-gray-dark;
+    }
+
+    a {
+      font-size: $font-xs;
+      font-weight: $font-regular;
+      color: $color-gray-dark;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+}

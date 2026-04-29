@@ -1,11 +1,41 @@
-import { CircleUserRound, CreditCard, Crown, Heart, Package2, ShieldCheck, ShoppingCart, Truck } from 'lucide-react';
 import './styles.scss';
+
 import logo from '@/assets/images/logo.png';
+import { CircleUserRound, CreditCard, Crown, Heart, Package2, ShieldCheck, ShoppingCart, Truck } from 'lucide-react';
+import { useState } from 'react';
+
 import SearchInput from '../SearchInput';
 
 const Header = () => {
+  const [active, setActive] = useState<string | null>(null);
+
+  const allCategories = [
+    {
+      name: 'Todas Categorias',
+    },
+    {
+      name: 'Supermercado',
+    },
+    {
+      name: 'Livros',
+    },
+    {
+      name: 'Moda',
+    },
+    {
+      name: 'Lançamentos',
+    },
+    {
+      name: 'Ofertas do dia',
+    },
+    {
+      icon: <Crown size={20} />,
+      name: 'Assinatura',
+    }
+  ]
+
   return (
-    <div className='header'>
+    <header className='header'>
       <div className='topbar'>
         <div className='topbar__item'>
           <ShieldCheck size={20} />
@@ -27,27 +57,27 @@ const Header = () => {
         </div>
         <SearchInput />
         <div className='header__icons'>
-          <Package2 size={32} className='header__icon'/>
-          <Heart size={32} className='header__icon'/>
-          <CircleUserRound size={32} className='header__icon'/>
-          <ShoppingCart size={32} className='header__icon'/>
+          <Package2 size={32} className='header__icon' />
+          <Heart size={32} className='header__icon' />
+          <CircleUserRound size={32} className='header__icon' />
+          <ShoppingCart size={32} className='header__icon' />
         </div>
       </div>
       <hr />
-        <div className='navbar'>
-          <ul className='nav'>
-            <li className='nav__item'>Todas Categorias</li>
-            <li className='nav__item'>Supermercado</li>
-            <li className='nav__item'>Livros</li>
-            <li className='nav__item'>Moda</li>
-            <li className='nav__item'>Lançamentos</li>
-            <li className='nav__item'>Ofertas do dia</li>
-            <li className='nav__item'>
-              <Crown />
-              Assinatura
+      <div className='navbar'>
+        <ul className='nav'>
+          {allCategories.map((category) => (
+            <li
+              key={category.name}
+              className={`nav__item ${active === category.name ? 'nav__item--active' : ''
+                }`}
+              onClick={() => setActive(category.name)}
+            >
+              {category.icon}{category.name}
             </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
+      </div>
 
       {/* <Button variant="primary">
         Comprar
@@ -60,7 +90,7 @@ const Header = () => {
       {/* <div>
         <h1 className="text" >Hello World</h1>
       </div> */}
-    </div>
+    </header>
   );
 };
 

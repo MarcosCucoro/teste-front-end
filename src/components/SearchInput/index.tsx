@@ -27,7 +27,10 @@ const SearchInput = ({
           }
         }}
       />
+      <button className="search__button" onClick={() => console.log('buscar:', value)}>
+
       <Search size={28} className="search__icon" />
+      </button>
     </div>
   );
 };

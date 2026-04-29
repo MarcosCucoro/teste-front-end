@@ -1,48 +1,22 @@
-// BRAND COLORS
-$color-primary: #3442B5;
-$color-primary-light: #3019B2;
-$color-primary-dark: #23237a;
+// AZUL
+$color-blue: #3442B5;
 
-// (botões amarelos)3019B2
-$color-secondary: #f7ca11;
-$color-secondary-dark: #d4aa00;
+// AMARELO
+$color-yellow: #F7CA11;
 
+// ROXO
+$color-purple: #271C47;
+
+// CINZAS
+$color-gray-md: #9F9F9F;
+$color-gray-dark: #3F3F40;
 
 // NEUTROS
-$color-white: #ffffff;
+$color-white: #FFFFFF;
 $color-black: #000000;
-
-// Background geral
-$bg-main: #f5f5f5;
-$bg-section: #ffffff;
-$bg-card: #ffffff;
-
-// Cinzas (UI)
-$gray-100: #f9f9f9;
-$gray-200: #eeeeee;
-$gray-300: #F6F5F2;
-$gray-400: #cccccc;
-$gray-500: #999999;
-$gray-600: #666666;
-$gray-700: #444444;
-$gray-800: #2d2d2d;
-
-
-// TEXTOS
-$text-primary: #222222;
-$text-secondary: #666666;
-$text-muted: #9F9F9F;
-$text-white: #ffffff;
-
-
-// BORDAS
-$border-color: #e5e5e5;
-$border-light: #f0f0f0;
-
 
 // TIPOGRAFIA
 $font-family-base: 'Poppins', sans-serif;
-
 
 // TAMANHOS
 $font-xs: 12px;
@@ -50,9 +24,9 @@ $font-sm: 14px;
 $font-md: 16px;
 $font-lg: 18px;
 $font-xl: 22px;
-$font-xxl: 28px;
+$font-xxl: 30px;
+$font-xxxl: 40px;
 $font-hero: 48px;
-
 
 // PESOS
 $font-light: 300;
@@ -61,16 +35,14 @@ $font-medium: 500;
 $font-semibold: 600;
 $font-bold: 700;
 
-
 // ESPAÇAMENTOS
 $space-xxs: 4px;
 $space-xs: 8px;
 $space-sm: 12px;
 $space-md: 16px;
-$space-lg: 24px;
-$space-xl: 32px;
+$space-lg: 18px;
+$space-xl: 24px;
 $space-xxl: 48px;
-
 
 // BORDER RADIUS
 $radius-sm: 6px;
@@ -78,12 +50,28 @@ $radius-md: 10px;
 $radius-lg: 16px;
 $radius-pill: 999px;
 
-
 // SOMBRAS (cards e categorias)
 $shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
 $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
 $shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-
+$shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.16);
 
 // TRANSIÇÃO
 $transition-default: all 0.2s ease-in-out;
+
+// Background geral
+$bg-main: #f5f5f5;
+$bg-section: #ffffff;
+$bg-card: #F4F4F4;
+$bg-search: #f0f0f0;
+
+// BORDAS
+$border-light: #f0f0f0;
+$border-md: #bdbdbd;
+
+// TEXTOS
+$text-primary: #222222;
+$text-secondary: #4E4E4E;
+$text-muted: #9F9F9F;
+
+

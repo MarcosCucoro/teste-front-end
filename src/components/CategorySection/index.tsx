@@ -46,8 +46,8 @@ const CategorySection = () => {
               }`}
             onClick={() => setActive(category.name)}
           >
-            <div className="category-item__icon">{category.icon}</div>
-            <span className="category-item__name">{category.name}</span>
+            <a href="#"className="category-item__icon">{category.icon}</a>
+              <span className="category-item__name">{category.name}</span>
           </div>
         ))}
       </div>

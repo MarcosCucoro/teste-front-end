@@ -7,8 +7,8 @@ interface Props {
   onClick?: () => void;
 }
 
-const formatPrice = (value: number) =>
-  value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const formatPrice = (value?: number) =>
+  value?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) ?? '';
 
 const ProductCard = ({ product, onClick }: Props) => {
   return (
@@ -25,14 +25,14 @@ const ProductCard = ({ product, onClick }: Props) => {
       }}
     >
       <div className="product-card__image">
-        <img src={product.image} alt={product.description} />
+        <img src={product.photo} alt={product.descriptionShort} />
       </div>
       <div className="product-card__body">
-        <p className="product-card__description">{product.description}</p>
-        <p className="product-card__original-price">{formatPrice(product.originalPrice)}</p>
-        <p className="product-card__price">{formatPrice(product.currentPrice)}</p>
+        <p className="product-card__description">{product.descriptionShort}</p>
+        <p className="product-card__original-price">{formatPrice(product.price)}</p>
+        <p className="product-card__price">{formatPrice(product.price)}</p>
         <p className="product-card__installments">
-          ou {product.installments}x de {formatPrice(product.installmentPrice)} sem juros
+          ou 2x de {formatPrice(product.price ? product.price / 2 : 0)} sem juros
         </p>
         <span className="product-card__shipping">Frete grátis</span>
         <Button fullWidth onClick={onClick}>COMPRAR</Button>

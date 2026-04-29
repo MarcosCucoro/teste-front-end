@@ -58,21 +58,21 @@
 	}
 
 	&__title {
-		font-size: $font-xxl;
+		font-size: $font-xl;
 		font-weight: $font-regular;
 		color: $color-gray-dark;
 		text-transform: uppercase;
 	}
 
 	&__price {
-		font-size: 2rem;
-		font-weight: $font-bold;
+		font-size: $font-xl;
+		font-weight: $font-semibold;
 		color: $color-gray-dark;
 	}
 
 	&__description {
-		max-width: 360px;
-		font-size: $font-sm;
+		max-width: 290px;
+		font-size: $font-xs;
 		line-height: 1.5;
 		color: $color-gray-md;
 	}
@@ -83,7 +83,7 @@
 		border: none;
 		background: transparent;
 		font-size: $font-xs;
-		font-weight: $font-bold;
+		font-weight: $font-semibold;
 		color: $color-blue;
 		cursor: pointer;
 	}
@@ -98,7 +98,7 @@
 	&__quantity {
 		display: inline-flex;
 		align-items: center;
-		gap: $space-sm;
+		gap: $space-md;
 		padding: 0.75rem 1rem;
 		border: 1px solid $border-light;
 		border-radius: $radius-sm;
@@ -117,9 +117,13 @@
 			min-width: 24px;
 			text-align: center;
 			font-size: $font-md;
-			font-weight: $font-bold;
+			font-weight: $font-medium;
 			color: $color-purple;
 		}
+	}
+
+	&__total {
+		font-size: $font-sm;
 	}
 
 	@media (max-width: 768px) {

@@ -46,7 +46,7 @@ const ProductSection = ({
         <span>{title}</span>
       </h2>
 
-      {categories && categories.length > 0 && (
+      {categories && (
         <div className='product-section__categories'>
           {categories.map((cat) => (
             <button
@@ -78,9 +78,9 @@ const ProductSection = ({
         </button>
 
         <div className='product-section__track' ref={trackRef}>
-          {products.map((product) => (
+          {products.map((product, index) => (
             <ProductCard
-              key={product.id}
+              key={product.id ?? index}
               product={product}
               onClick={() => onProductClick?.(product)}
             />

@@ -65,31 +65,19 @@ const Header = () => {
       </div>
       <hr />
       <div className='navbar'>
-        <ul className='nav'>
+        <div className='nav'>
           {allCategories.map((category) => (
-            <li
+            <a href='#'
               key={category.name}
               className={`nav__item ${active === category.name ? 'nav__item--active' : ''
                 }`}
               onClick={() => setActive(category.name)}
             >
               {category.icon}{category.name}
-            </li>
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
-
-      {/* <Button variant="primary">
-        Comprar
-      </Button>
-
-      <Button variant="secondary">
-        Ver produto
-      </Button> */}
-
-      {/* <div>
-        <h1 className="text" >Hello World</h1>
-      </div> */}
     </header>
   );
 };

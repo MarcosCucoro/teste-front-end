@@ -10,21 +10,19 @@ interface Props {
 	onClose: () => void;
 }
 
-const formatPrice = (value: number) =>
-	value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const formatPrice = (value?: number) =>
+	value?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) ?? '';
 
 const ProductModal = ({ product, isOpen, onClose }: Props) => {
 	const [quantity, setQuantity] = useState(1);
 
 	useEffect(() => {
-		if (!isOpen) {
-			return undefined;
-		}
+		if (!isOpen)
+			return;
 
 		const handleEscape = (event: KeyboardEvent) => {
-			if (event.key === 'Escape') {
+			if (event.key === 'Escape')
 				onClose();
-			}
 		};
 
 		document.body.style.overflow = 'hidden';
@@ -49,22 +47,25 @@ const ProductModal = ({ product, isOpen, onClose }: Props) => {
 				aria-modal="true"
 				aria-labelledby="product-modal-title"
 			>
-				<button className="product-modal__close" onClick={onClose} aria-label="Fechar modal">
+				<button
+					className="product-modal__close"
+					onClick={onClose}
+					aria-label="Fechar modal"
+				>
 					<IoCloseOutline />
 				</button>
 
 				<div className="product-modal__media">
-					<img src={product.image} alt={product.description} />
+					<img src={product.photo} alt={product.descriptionShort} />
 				</div>
 
 				<div className="product-modal__content">
-					<h2 id="product-modal-title" className="product-modal__title">{product.name}</h2>
-					<p className="product-modal__price">{formatPrice(product.currentPrice)}</p>
-					<p className="product-modal__description">{product.details}</p>
+					<h2 id="product-modal-title" className="product-modal__title">{product.productName}</h2>
+					<p className="product-modal__price">{formatPrice(product.price)}</p>
+					<p className="product-modal__description">{product.descriptionShort}</p>
 					<button className="product-modal__link" type="button">
 						Veja mais detalhes do produto &gt;
 					</button>
-
 					<div className="product-modal__actions">
 						<div className="product-modal__quantity" aria-label="Quantidade">
 							<button
@@ -84,10 +85,11 @@ const ProductModal = ({ product, isOpen, onClose }: Props) => {
 							</button>
 						</div>
 
-						<Button variant="secondary" size="sm" uppercase>
+						<Button variant="secondary" size="md" uppercase>
 							Comprar
 						</Button>
 					</div>
+					<p className="product-modal__total">Total: {formatPrice((product.price ?? 0) * quantity)}</p>
 				</div>
 			</div>
 		</div>
